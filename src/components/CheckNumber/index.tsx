@@ -12,7 +12,7 @@ export const CheckNumber = () => {
       <input 
         type="text" 
         name="number" 
-        placeholder="Digite um número" 
+        placeholder="Digite o número" 
         value={number}
         onChange={(event) => {
           const rawValue = event.target.value
@@ -21,16 +21,15 @@ export const CheckNumber = () => {
           setNumber(rawValue)
 
           if (isNaN(numberValue)) {
-            setErrorMessage("Por favor, digite um número")
+            setErrorMessage("Por favor, digite um número.")
             return
           }
 
           setErrorMessage("")
         }}
       />
-
-      {<p>{isEven ? "Par" : "Ímpar"}</p>}
-      <p>{errorMessage}</p>
+      <p role="presentation">{isEven ? "Par" : "Ímpar"}</p>
+      <p role="alert">{errorMessage}</p>
     </div>
   )
 } 
